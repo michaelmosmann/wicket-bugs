@@ -9,14 +9,19 @@ import org.apache.wicket.model.Model;
 public class PageA extends WebPage {
 
 	public PageA() {
+		this(0);
+	}
+	
+	public PageA(int start) {
 		
-		IModel<Integer> model=Model.of(0);
+		IModel<Integer> model=Model.of(start);
 		add(new Label("count",model));
 		
 		add(new Link<Integer>("link",model) {
 			@Override
 			public void onClick() {
 				setModelObject(1+getModelObject());
+				setResponsePage(new PageA(getModelObject()));
 			}
 		});
 	}
