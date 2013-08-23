@@ -1,5 +1,6 @@
 package de.flapdoodle.bugs;
 
+import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 
 /**
@@ -19,9 +20,9 @@ public class WicketApplication extends WebApplication
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()
 	 */
-	public Class<HomePage> getHomePage()
+	public Class<StartPage> getHomePage()
 	{
-		return HomePage.class;
+		return StartPage.class;
 	}
 
 }
